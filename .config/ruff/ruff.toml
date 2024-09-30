@@ -1,0 +1,9 @@
+exclude = ["**/alembic/**"]
+
+[lint]
+select = ["D", "E", "F", "B", "C", "I", "N", "Q", "S", "G"]
+ignore = ["D203", "D213", "D415", "B008","D210"]
+extend-ignore = ["E501"] # Ignore line length on strings
+
+[lint.per-file-ignores]
+"tests/*.py" = ["S101"]
