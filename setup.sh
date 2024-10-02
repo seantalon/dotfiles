@@ -10,8 +10,8 @@ if [[ "$SHELL" != "/usr/bin/fish" ]]; then
     sudo chsh -s /usr/bin/fish $USER
 fi
 
+
+
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
-fish
-
-source ~/.config/fish/config.fish
+curl https://pyenv.run | bash
