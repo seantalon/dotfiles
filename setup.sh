@@ -2,7 +2,7 @@
 
 sudo apt update && sudo apt install -y fish curl
 
-cp -r ./config/* ~/.config
+cp -r ./.config/* ~/.config/
 
 # Change the default shell to fish
 if [[ "$SHELL" != "/usr/bin/fish" ]]; then
