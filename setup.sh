@@ -20,4 +20,4 @@ fish_add_path $PYENV_ROOT/bin
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
-cp -r ./.config/* ~/.config/
+cp -r .config/* ~/.config/
