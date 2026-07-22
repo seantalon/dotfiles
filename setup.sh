@@ -22,11 +22,6 @@ ln -sf "$CONFIG_SRC/fish/config.fish"  "$CONFIG_DST/fish/config.fish"
 ln -sf "$CONFIG_SRC/starship.toml"     "$CONFIG_DST/starship.toml"
 ln -sf "$CONFIG_SRC/git/config"        "$CONFIG_DST/git/config"
 
-echo "==> Seeding fish_variables (copy once, do NOT symlink — fish writes to it)"
-if [[ ! -e "$CONFIG_DST/fish/fish_variables" && -e "$CONFIG_SRC/fish/fish_variables" ]]; then
-    cp "$CONFIG_SRC/fish/fish_variables" "$CONFIG_DST/fish/fish_variables"
-fi
-
 echo "==> Adding guarded 'exec fish' to ~/.bashrc (if not already present)"
 if ! grep -q 'FISH_STARTED' "$HOME/.bashrc" 2>/dev/null; then
     cat >> "$HOME/.bashrc" <<'EOF'
