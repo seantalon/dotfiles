@@ -1,9 +1,22 @@
-exclude = ["**/alembic/**"]
+# Global ruff defaults — applies only to files outside a project that has its own config.
+# Project-specific rules live in each repo's own ruff.toml / pyproject.toml.
+
+exclude = [
+    ".bzr", ".direnv", ".eggs", ".git", ".git-rewrite", ".hg",
+    ".mypy_cache", ".nox", ".pants.d", ".pytype", ".ruff_cache",
+    ".svn", ".tox", ".venv", "__pypackages__", "_build", "buck-out",
+    "build", "dist", "node_modules", "venv", "htmlcov",
+]
+
+line-length = 88
+target-version = "py313"
 
 [lint]
-select = ["D", "E", "F", "B", "C", "I", "N", "Q", "S", "G"]
-ignore = ["D203", "D213", "D415", "B008","D210"]
-extend-ignore = ["E501"] # Ignore line length on strings
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "C4", "PTH", "RUF"]
+ignore = ["E501", "COM812"]  # E501 handled by formatter
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-[lint.per-file-ignores]
-"tests/*.py" = ["S101"]
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
